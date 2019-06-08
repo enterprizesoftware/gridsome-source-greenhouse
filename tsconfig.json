@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "sourceMap": true,
+    "removeComments": true,
+    "module": "commonjs",
+    "outDir": "dist/",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "declaration": true
+  },
+  "include": ["src/**/*", "src/**/*.d.ts"],
+  "exclude": ["**/*.test.ts", "**/*.fixture.ts"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "gridsome-source-greenhouse",
+  "depdendencies": {},
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
