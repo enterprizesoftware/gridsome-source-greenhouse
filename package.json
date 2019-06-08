@@ -1,5 +1,6 @@
 {
   "name": "gridsome-source-greenhouse",
+  "license": "MIT",
   "depdendencies": {},
   "dependencies": {
     "axios": "^0.19.0"
