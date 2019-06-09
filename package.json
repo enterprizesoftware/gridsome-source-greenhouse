@@ -1,7 +1,7 @@
 {
   "name": "gridsome-source-greenhouse",
   "version": "1.0.1",
-  "description": "Gridsome plugin to source data from Greenhouse",
+  "description": "Greenhouse source for Gridsome",
   "license": "MIT",
   "author": {
     "name": "Jamel A. Toms"
