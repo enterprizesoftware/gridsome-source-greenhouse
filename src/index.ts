@@ -1,3 +1,4 @@
+import { JobDetail } from './data-types'
 import { greenhouseConsumer } from './greenhouse-consumer'
 import { greenhouseOptions, GreenhouseOptions } from './greenhouse-options'
 
@@ -16,13 +17,20 @@ export default function(api: any, userOptions: GreenhouseOptions) {
       route: '/jobDetail/:id'
     })
 
-    consumer.listJobs().then(({ jobs }) => {
-      jobs.forEach((job) => {
-        greenhouseJobs.addNode(job)
-        consumer.retrieveJob(job.id).then((jobDetail) => {
-          greenhouseJobDetails.addNode(jobDetail)
-        })
+    consumer
+      .listJobs()
+      .then(({ jobs }) => {
+        return Promise.all(
+          jobs.map((job) => {
+            greenhouseJobs.addNode(job)
+            return consumer.retrieveJob(job.id)
+          })
+        )
       })
-    })
+      .then((jobDetails: JobDetail[]) => {
+        jobDetails.forEach((jobDetail) =>
+          greenhouseJobDetails.addNode(jobDetail)
+        )
+      })
   })
 }
