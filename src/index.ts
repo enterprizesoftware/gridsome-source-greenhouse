@@ -18,11 +18,16 @@ export default function(api: any, userOptions: GreenhouseOptions) {
 
     const { jobs } = await consumer.listJobs()
 
-    jobs.forEach(async (job) => {
+    for (let i = 0; i < jobs.length; i++) {
+      const job = jobs[i]
       greenhouseJobs.addNode(job)
 
       const jobDetail = await consumer.retrieveJob(job.id)
-      greenhouseJobDetails.addNode(jobDetail)
-    })
+      greenhouseJobDetails.addNode({
+        title: jobDetail.title,
+        id: jobDetail.id,
+        content: jobDetail.content
+      })
+    }
   })
 }
