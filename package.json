@@ -18,7 +18,8 @@
     "gridsome",
     "greenhouse",
     "plugin",
-    "source"
+    "source",
+    "gridsome-plugin"
   ],
   "main": "index.js",
   "scripts": {
