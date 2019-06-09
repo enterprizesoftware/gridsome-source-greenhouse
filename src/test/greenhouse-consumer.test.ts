@@ -4,7 +4,7 @@ import { greenhouseOptions } from '../greenhouse-options';
 describe('greenhouse-consumer', () => {
 
   const options = greenhouseOptions({
-    boardToken: 'enterprizesoftware'
+    boardToken: 'companyname'
   })
 
   const consumer = greenhouseConsumer(options);
