@@ -12,6 +12,5 @@
     "declaration": true,
     "lib": ["es2015"]
   },
-  "include": ["src/**/*", "src/**/*.d.ts"],
-  "exclude": ["**/*.test.ts", "**/*.fixture.ts"]
+  "include": ["src/**/*", "src/**/*.d.ts"]
 }

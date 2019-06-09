@@ -14,7 +14,7 @@ export function defaultOptions(): Partial<GreenhouseOptions> {
   }
 }
 
-export function greenhouseOptions(userOptions: GreenhouseOptions): GreenhouseOptions {
+export function greenhouseOptions(userOptions: Partial<GreenhouseOptions>): GreenhouseOptions {
   return validate(mixinDeep({}, defaultOptions(), userOptions))
 }
 

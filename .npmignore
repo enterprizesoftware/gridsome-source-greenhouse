@@ -1,6 +1,10 @@
 /.idea
 /node_modules
 /src
+
+**/*.test.ts
+**/*.fixture.ts
+
 .gitignore
 .npmignore
 tsconfig.json
