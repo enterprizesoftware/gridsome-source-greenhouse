@@ -2,11 +2,13 @@ import { greenhouseConsumer } from './greenhouse-consumer'
 import { greenhouseOptions, GreenhouseOptions } from './greenhouse-options'
 
 export default function(api: any, userOptions: GreenhouseOptions) {
+
+  console.log('**** ACTIVATED ****')
+
   const options = greenhouseOptions(userOptions)
   const consumer = greenhouseConsumer(options)
 
   api.loadSource(async (store: any) => {
-
     const greenhouseJobs = store.addContentType({
       typeName: 'GreenhouseJobs',
       route: '/job/:id'
@@ -20,10 +22,9 @@ export default function(api: any, userOptions: GreenhouseOptions) {
     const { jobs } = await consumer.listJobs()
     jobs.forEach(greenhouseJobs.addNode)
 
-    jobs.forEach(async job => {
+    jobs.forEach(async (job) => {
       const jobDetail = await consumer.retrieveJob(job.id)
       greenhouseJobDetails.addNode(jobDetail)
     })
-
   })
 }
