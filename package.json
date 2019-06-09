@@ -23,7 +23,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/*",
+    "release": "npm run clean && npm run build && npm publish"
   },
   "dependencies": {
     "@ridi/object-case-converter": "^2.0.4",
