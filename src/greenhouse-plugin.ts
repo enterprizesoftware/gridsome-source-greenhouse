@@ -23,11 +23,7 @@ export default function(api: any, userOptions: GreenhouseOptions) {
       greenhouseJobs.addNode(job)
 
       const jobDetail = await consumer.retrieveJob(job.id)
-      greenhouseJobDetails.addNode({
-        title: jobDetail.title,
-        id: jobDetail.id,
-        content: jobDetail.content
-      })
+      greenhouseJobDetails.addNode(jobDetail)
     }
   })
 }

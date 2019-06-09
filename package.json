@@ -20,7 +20,7 @@
     "plugin",
     "source"
   ],
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "npx tsc",
     "clean": "rm -rf dist/*",

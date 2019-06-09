@@ -1,16 +1,16 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "sourceMap": true,
-    "removeComments": true,
-    "module": "commonjs",
-    "outDir": "dist/",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "strict": true,
-    "noUnusedLocals": true,
     "declaration": true,
-    "lib": ["es2015"]
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2015"],
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "dist/",
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true
   },
   "include": ["src/**/*", "src/**/*.d.ts"]
 }
