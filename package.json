@@ -1,8 +1,37 @@
 {
   "name": "gridsome-source-greenhouse",
+  "version": "1.0.0-0",
+  "description": "Gridsome plugin to source data from Greenhouse",
   "license": "MIT",
-  "depdendencies": {},
+  "author": {
+    "name": "Jamel A. Toms"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enterprizesoftware/gridsome-source-greenhouse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enterprizesoftware/gridsome-source-greenhouse/issues"
+  },
+  "homepage": "https://github.com/enterprizesoftware/gridsome-source-greenhouse",
+  "keywords": [
+    "gridsome",
+    "greenhouse",
+    "plugin",
+    "source"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "clean": "rm -rf dist/*"
+  },
   "dependencies": {
-    "axios": "^0.19.0"
+    "@ridi/object-case-converter": "^2.0.4",
+    "axios": "^0.19.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.134",
+    "typescript": "^3.5.1"
   }
 }
