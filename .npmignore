@@ -1,11 +1,8 @@
 /.idea
 /node_modules
 /src
-
-**/*.test.ts
-**/*.fixture.ts
-**/*.tgz
-
+**/*/test/
+*.tgz
 .gitignore
 .npmignore
 jest.config.js
