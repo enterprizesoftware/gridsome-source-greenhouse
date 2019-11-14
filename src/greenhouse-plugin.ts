@@ -6,12 +6,12 @@ export default function(api: any, userOptions: GreenhouseOptions) {
   const consumer = greenhouseConsumer(options)
 
   api.loadSource(async (store: any) => {
-    const greenhouseJobs = store.addContentType({
+    const greenhouseJobs = store.addCollection({
       typeName: 'GreenhouseJobs',
       route: '/job/:id'
     })
 
-    const greenhouseJobDetails = store.addContentType({
+    const greenhouseJobDetails = store.addCollection({
       typeName: 'GreenhouseJobDetails',
       route: '/jobDetail/:id'
     })
