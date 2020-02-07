@@ -4,7 +4,7 @@ import { greenhouseOptions } from '../greenhouse-options';
 describe('greenhouse-consumer', () => {
 
   const options = greenhouseOptions({
-    boardToken: 'companyname'
+    boardToken: process.env.BOARD_TOKEN
   })
 
   const consumer = greenhouseConsumer(options);

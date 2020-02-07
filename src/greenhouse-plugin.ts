@@ -1,20 +1,23 @@
 import { greenhouseConsumer } from './greenhouse-consumer'
 import { greenhouseOptions, GreenhouseOptions } from './greenhouse-options'
 
+interface GridsomeActions {
+  addCollection(name: string): any
+  addCollection(def: GridsomeCollectionDef): any
+}
+
+interface GridsomeCollectionDef {
+  typeName: string
+}
+
 export default function(api: any, userOptions: GreenhouseOptions) {
   const options = greenhouseOptions(userOptions)
   const consumer = greenhouseConsumer(options)
 
-  api.loadSource(async (store: any) => {
-    const greenhouseJobs = store.addCollection({
-      typeName: 'GreenhouseJobs',
-      route: '/job/:id'
-    })
+  api.loadSource(async (actions: GridsomeActions) => {
+    const greenhouseJobs = actions.addCollection('Job')
 
-    const greenhouseJobDetails = store.addCollection({
-      typeName: 'GreenhouseJobDetails',
-      route: '/jobDetail/:id'
-    })
+    const greenhouseJobDetails = actions.addCollection('JobDetail')
 
     const { jobs } = await consumer.listJobs()
 
