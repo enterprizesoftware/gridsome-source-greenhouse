@@ -26,4 +26,11 @@ describe('greenhouse-consumer', () => {
     done()
   })
 
+  test('listDepartments', async (done) => {
+    const departments = await consumer.listDepartments()
+    expect(departments.departments).toBeDefined()
+    expect(departments.departments.length).toBeGreaterThan(0)
+    done()
+  })
+
 })

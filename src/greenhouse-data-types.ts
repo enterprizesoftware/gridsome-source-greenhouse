@@ -9,7 +9,7 @@ export interface Job {
   absoluteUrl: string
   internalJobId: number
   location: Location
-  metadata: any
+  metadata: any[]
   id: number
   updatedAt: string
   requisitionId: string
@@ -26,11 +26,16 @@ export interface JobDetail extends Job {
   offices: Office[]
 }
 
+export interface Departments {
+  departments: Department[]
+}
+
 export interface Department {
   id: number
   name: string
   childIds: number[]
   parentId: number
+  jobs: Job[]
 }
 
 export interface Office {

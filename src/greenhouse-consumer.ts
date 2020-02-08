@@ -1,11 +1,12 @@
 import axios from 'axios'
-import { JobDetail, Jobs } from './data-types'
+import { Departments, JobDetail, Jobs } from './greenhouse-data-types'
 import { GreenhouseOptions } from './greenhouse-options'
 import { camelize } from '@ridi/object-case-converter'
 
 export interface GreenhouseConsumer {
   listJobs(): Promise<Jobs>
   retrieveJob(jobId: number): Promise<JobDetail>
+  listDepartments(): Promise<Departments>
 }
 
 export function greenhouseConsumer(
@@ -28,8 +29,15 @@ export function greenhouseConsumer(
       .then(response => camelize(response.data) as JobDetail)
   }
 
+  function listDepartments(): Promise<Departments> {
+    return client
+      .get('/departments')
+      .then(response => camelize(response.data) as Departments)
+  }
+
   return {
     listJobs,
-    retrieveJob
+    retrieveJob,
+    listDepartments
   }
 }
