@@ -16,7 +16,6 @@ export default function(api: any, userOptions: GreenhouseOptions) {
 
   api.loadSource(async (actions: GridsomeActions) => {
     const greenhouseJobs = actions.addCollection('Job')
-
     const greenhouseJobDetails = actions.addCollection('JobDetail')
 
     const { jobs } = await consumer.listJobs()
