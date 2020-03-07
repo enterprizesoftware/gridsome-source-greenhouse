@@ -1,13 +1,14 @@
-import { greenhouseConsumer } from '../greenhouse-consumer';
+import { createBoardConsumer } from '../board-consumer';
 import { greenhouseOptions } from '../greenhouse-options';
 
-describe('greenhouse-consumer', () => {
+describe('board-consumer', () => {
 
   const options = greenhouseOptions({
-    boardToken: process.env.BOARD_TOKEN
+    boardToken: process.env.BOARD_TOKEN,
+    harvestApiToken: process.env.HARVEST_TOKEN
   })
 
-  const consumer = greenhouseConsumer(options);
+  const consumer = createBoardConsumer(options);
 
   test('listJobs', async (done) => {
     const jobs = await consumer.listJobs()
@@ -18,7 +19,7 @@ describe('greenhouse-consumer', () => {
 
   test('retrieveJob', async (done) => {
     const jobs = await consumer.listJobs()
-    const jobDetailId = jobs.jobs[0].id
+    const jobDetailId = jobs.jobs[2].id
     const jobDetail = await consumer.retrieveJob(jobDetailId)
     expect(jobs.jobs).toBeDefined()
     expect(jobDetail.title).toBeDefined()

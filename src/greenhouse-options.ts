@@ -2,15 +2,20 @@ import { isNil } from 'lodash'
 import { isBlank, mixinDeep } from './utils'
 
 export interface GreenhouseOptions {
-  baseUrl: string
+  boardsApiUrl: string
   boardToken: string
+
+  harvestApiUrl: string
+  harvestApiToken: string
+
   timeout: number
 }
 
 export function defaultOptions(): Partial<GreenhouseOptions> {
   return {
     timeout: 3000,
-    baseUrl: 'https://boards-api.greenhouse.io/v1/boards/'
+    boardsApiUrl: 'https://boards-api.greenhouse.io/v1/boards',
+    harvestApiUrl: 'https://harvest.greenhouse.io/v1'
   }
 }
 
@@ -24,6 +29,9 @@ export function validate(options: GreenhouseOptions): GreenhouseOptions {
 
   if (isBlank(options.boardToken))
     throw new Error('Must specify working board token')
+
+  if (isBlank(options.harvestApiToken))
+    throw new Error('Must specify working harvest API token')
 
   return options
 }

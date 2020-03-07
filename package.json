@@ -11,7 +11,7 @@
     "url": "https://github.com/enterprizesoftware/gridsome-source-greenhouse.git"
   },
   "bugs": {
-    "url": "https://github.com/enterprizesoftware/gridsome-source-greenhouse/issues"
+    "url": "https://github.com/enternpmprizesoftware/gridsome-source-greenhouse/issues"
   },
   "homepage": "https://github.com/enterprizesoftware/gridsome-source-greenhouse",
   "keywords": [
@@ -23,7 +23,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "rm -rf dist/* && npx tsc",
     "clean": "rm -rf dist/*",
     "release": "npm run clean && npm run build && npm publish"
   },
@@ -35,9 +35,10 @@
   "devDependencies": {
     "@types/jest": "^24.9.1",
     "@types/lodash": "^4.14.149",
-    "@types/node": "^12.12.26",
+    "@types/node": "^12.12.29",
+    "gridsome": "^0.7.13",
     "jest": "^24.9.0",
     "ts-jest": "^24.3.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   }
 }
