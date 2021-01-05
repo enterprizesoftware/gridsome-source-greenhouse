@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@ridi/object-case-converter": "^2.0.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
